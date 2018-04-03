@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>
+          Info Akun
+      </ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+
+  <ion-list>
+      <ion-item>
+          {{userDetails.full_name}}
+      </ion-item>
+      <ion-item>
+          {{userDetails.phone}}
+      </ion-item>
+      <ion-item text-wrap [navPush]="pushMap">
+          <p>{{vAlamat}}</p>
+          <ion-icon name="ios-pin-outline" item-end></ion-icon>
+      </ion-item>
+      <ion-item [navPush]="pushDeposit">
+          <p>Saldo <strong>Rp.{{saldoNow}}</strong></p>
+          <ion-icon name="ios-add-outline" item-end></ion-icon>           
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item-divider>
+        <strong>INFORMASI</strong>
+    </ion-item-divider>
+    <!-- <ion-item>
+        <ion-icon name="ios-person-outline" item-start></ion-icon>
+        Ubah Data Profil
+    </ion-item>
+    <ion-item>
+        <ion-icon name="ios-lock-outline" item-start></ion-icon>
+        Ubah Kata Sandi
+    </ion-item>
+  </ion-list>
+
+  <ion-list> -->
+        <!-- <ion-item [navPush]="pushHistory">
+            <ion-icon name="ios-paper-outline" item-start></ion-icon>
+            History Transaksi
+        </ion-item> -->
+        <ion-item [navPush]="pushOrder">
+          <ion-icon name="ios-list-box-outline" item-start></ion-icon>
+          Daftar Orderan
+        </ion-item>
+        <ion-item [navPush]="pushBantuan">
+            <ion-icon name="ios-information-circle-outline" item-start></ion-icon>
+            Tips Berbelanja
+        </ion-item>
+  </ion-list>
+
+  <ion-list>
+        <button ion-item (click)="logOut()">
+            <ion-icon name="ios-log-out-outline" item-start></ion-icon>
+            Keluar
+        </button>
+  </ion-list>
+  
+</ion-content>  

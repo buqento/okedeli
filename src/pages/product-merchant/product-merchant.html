@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{namaPenyedia}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-start (click)="gotoHome()">
+          <ion-icon name="ios-exit-outline"></ion-icon>
+          Keluar
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+        <ion-list>
+            <ion-grid fixed>
+                <ion-row>
+                  <ion-col col-6 class="product" *ngFor="let item of items" (click)="openPilihItem(item.nama, item.foto, item.lat, item.lng, item.suka, item.harga_satuan, item.nama_penyedia, item.alamat, item.kode_item, item.id, item.id_penyedia, item.jml)">
+                      <img src="https://okedeli.com/apps/images/{{item.foto}}"/>
+                          <ion-item>
+                            <p><strong>{{item.nama}}</strong></p>
+                            <p><small>Rp.{{item.conv_harga}}</small></p>
+                          </ion-item>
+                  </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+    <ion-item (click)="openKeranjang()" no-padding>
+        <button ion-button item-start clear large icon-only color="dark" (click)="openKeranjang()">
+            <span class="jml-keranjang">{{vJmlBasket}}</span>
+            <ion-icon name="ios-basket-outline"></ion-icon>
+        </button>
+        <h1 item-start>Rp.{{vTotalBasket}}</h1>
+        <ion-icon item-end name="ios-arrow-forward-outline"></ion-icon>
+    </ion-item>
+</ion-footer>

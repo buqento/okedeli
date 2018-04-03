@@ -1,3 +1,59 @@
 page-home {
+    .card .list .item {
+        border-bottom: 1px solid #cfd8dc;
+    }
+    
+    .swiper-pagination-bullet-active {
+        background: #dd2c00,
+    }
+
+    .inner{
+        width: 440px;
+        height: 100%;
+    }
+
+    .product{
+        border-style:solid;
+        border-color:#cfd8dc;
+        border-width: 1pt;
+    }
+    .jml-keranjang {
+            position: absolute;
+            border-radius:50%;
+            width:15px;
+            height:15px;
+            top: 10%;
+            right: 60%;
+            font-size: 0.8em;
+            color: #fff;
+            text-align: center;
+            background-color: #111;
+            border-style:solid;
+            border-color:#dd2c00;
+            border-width: 1pt;
+    }
+
+    .category{
+        padding:4px 4px 4px 4px;
+        position: relative;
+        text-align: center;
+        width:60px;
+        height:60px;
+        border-radius:15%;
+        border-style:solid;
+        border-color:#cfd8dc;
+        border-width: 1pt;
+
+        .category-title {
+            padding-left: 4px;
+            position: absolute;
+            top: 100%;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #444;
+            width: 80%;
+            letter-spacing: 0.8px;
+          }
+    }
 
 }

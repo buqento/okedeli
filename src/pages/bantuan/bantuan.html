@@ -1,0 +1,44 @@
+<ion-content>
+  <ion-slides pager (ionSlideDidChange)="slideChanged()" (ionSlideDrag)="slideMoved()">
+    <ion-slide>
+      <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
+        <ion-icon name="ios-add-circle-outline" color="primary" [@bounce]='state' (@bounce.done)="animationDone()"></ion-icon>
+      </div>
+      <div [@bounce]='state'>
+        <h2>Deposit Saldo</h2>
+        <p>
+          Pembelian <strong>voucher fisik</strong> dapat menghubungi layanan telepon OkeDeli
+          <strong>+62 822-483-50005</strong>
+        </p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+        <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
+        <ion-icon name="ios-basket-outline" color="primary" [@bounce]='state'></ion-icon>
+      </div>
+      <div [@bounce]='state'>
+        <h2>Pilih Produk</h2>
+        <p>Pilih Produk yang akan diorder, kemudian tambahkan pada keranjang belanja Anda.</p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+        <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
+        <ion-icon name="ios-checkmark-circle-outline" color="primary" [@bounce]='state'></ion-icon>
+      </div>
+      <div [@bounce]='state'>
+        <h2>Pembayaran</h2>
+        <p>Lakukan pembayaran untuk semua produk yang ada di dalam keranjang belanja Anda.</p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+        <div class="diag" style="background: url('assets/imgs/whitebg.svg') no-repeat">
+        <ion-icon name="ios-timer-outline" color="primary" [@bounce]='state'></ion-icon>
+      </div>
+      <div [@bounce]='state'>
+        <h2>Menunggu Orderan</h2>
+        <p>Kurir kami akan mengantar orderan Anda ke alamat yang tertera pada pembayaran.</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <button ion-text color="dark" (click)="skip()" id="skip">{{ skipMsg }}</button>
+</ion-content>

@@ -1,0 +1,25 @@
+page-product-merchant {
+    .product{
+        border-style:solid;
+        border-color:#cfd8dc;
+        border-width: 1pt;
+    }
+    .jml-keranjang {
+        position: absolute;
+        border-radius:50%;
+        width:19px;
+        height:19px;
+        top: 13%;
+        left: 58%;
+        font-size: 0.8em;
+        color: #fff;
+        text-align: center;
+        background-color: #a30000;
+        border-style:solid;
+        border-color:#fff;
+        border-width: 1pt;
+    }
+    .ico{
+        font-size: 5em;
+    }
+}

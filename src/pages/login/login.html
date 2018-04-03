@@ -1,0 +1,44 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/imgs/logo.svg">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>Login Pengguna</ion-title>
+      <ion-buttons start>
+          <button ion-button icon-only [navPush]="PushSignup">
+            <ion-icon name="ios-person-add-outline"></ion-icon>
+          </button>
+      </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Nama Pengguna</ion-label>
+        <ion-input type="text" [(ngModel)]="userData.username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Kata Sandi</ion-label>
+        <ion-input [type]="password_type" name="password" [(ngModel)]="userData.password"></ion-input>
+        <button ion-button item-end icon-only clear large (click)="togglePasswordMode()">
+          <ion-icon name="ios-eye-outline"></ion-icon>
+        </button>
+      </ion-item>
+      
+    </ion-list>
+
+    <div padding>
+        <button ion-button color="primary" large round full (click)="logIn()">Login</button>
+    </div>
+
+</ion-content>

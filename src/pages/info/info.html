@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{kode}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+      <ion-list *ngFor="let item of dataSet">
+        <ion-item>
+            <ion-icon item-start name="ios-restaurant-outline"></ion-icon>
+            <p>{{item.nama}}</p>
+            <p item-end>Rp.{{item.conv_harga}}</p>
+        </ion-item>
+      </ion-list>
+      
+      <ion-list>
+          <hr>
+        <ion-item>
+            <ion-icon item-start name="ios-cash-outline"></ion-icon>
+            <p>Biaya Pengiriman</p>
+            <p item-end>Rp.{{ongKir}}</p>
+        </ion-item>
+      </ion-list>
+  </ion-card>
+</ion-content>

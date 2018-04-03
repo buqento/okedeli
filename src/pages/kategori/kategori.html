@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>
+          {{judul}}
+      </ion-title>
+  </ion-navbar>
+</ion-header> 
+
+<ion-content>
+  <ion-searchbar placeholder="Cari produk" (ionInput)="getItems($event)"></ion-searchbar>
+
+  <ion-card>
+      <div>
+          <ion-list>
+              <ion-grid fixed>
+                  <ion-row>
+                    <ion-col col-6 class="product" *ngFor="let item of dataSet" (click)="openProduct(item.id_penyedia, item.nama_penyedia, item.lat, item.lng)">
+                        <img src="https://okedeli.com/apps/images/{{item.foto}}"/>
+                            <ion-item>
+                              <p><strong>{{item.nama}}</strong></p>
+                              <p><small>Rp.{{item.conv_harga}}</small></p>
+                            </ion-item>
+                    </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </ion-list>
+      </div>
+  </ion-card>
+</ion-content>

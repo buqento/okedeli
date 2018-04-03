@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{nama}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <img src="https://okedeli.com/apps/images/{{foto}}">
+
+    <ion-list>
+
+        <!-- <ion-item>
+            <ion-icon item-start name="ios-restaurant-outline"></ion-icon>
+            <p><strong>{{nama}}</strong></p>
+            <p>Rp.{{vHargaSatuan}}</p>
+            <p item-end>{{vJml}}</p>
+            <ion-icon item-end name="ios-chatbubbles-outline" (click)="getUlasan(menu_kode_item, nama, idPenyedia)"></ion-icon>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon item-start name="ios-home-outline"></ion-icon>
+            <p><strong>{{namaPenyedia}}</strong></p>
+            <p text-wrap>{{alamatPenjual}}</p>
+        </ion-item> -->
+
+        <ion-item-divider>
+            <strong>DETAIL BELANJA</strong>
+        </ion-item-divider>
+
+        <ion-input readonly="true" type="hidden" (ionChange)="hitung()" [(ngModel)]="data.qty" required=""></ion-input>
+
+        <ion-item>
+            <h1>Rp.{{hargaItem}}</h1>
+            <button ion-button outline icon-only item-end color="light" (click)="kurang()" *ngIf="minus">
+                <ion-icon name="ios-remove-outline" color="dark"></ion-icon>
+            </button>
+            <h1 item-end>{{vQty}}</h1>
+            <button ion-button outline icon-only item-end color="light" (click)="tambah()">
+                <ion-icon name="ios-add-outline" color="dark"></ion-icon> 
+            </button>
+        </ion-item>  
+
+        <ion-item>
+            <ion-label stacked>Catatan Untuk Penjual</ion-label>
+            <ion-textarea rows="2" [(ngModel)]="data.keterangan"></ion-textarea>
+        </ion-item>
+
+    </ion-list>
+
+</ion-content>
+
+<ion-footer>
+    <ion-grid no-padding fixed>
+        <ion-row>
+            <ion-col col-6>
+                <ion-item>
+                    <small>Saldo</small>
+                    <h1><strong>Rp.{{updateSaldo}}</strong></h1>
+                </ion-item>
+            </ion-col>
+            <ion-col col-6>
+                <button ion-button full large color="dark" (click)="checkBasket()">
+                    Tambah
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer> 

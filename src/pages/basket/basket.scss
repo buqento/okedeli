@@ -1,0 +1,17 @@
+page-basket {
+    .card{
+        .list .item {
+            border-bottom: 1px solid #555;
+        }
+    }
+    .emptyOrder{
+        position: relative;
+        top:40%;
+        font-size:1em;
+        color: #cfd8dc;
+    }
+    .icSad{
+        font-size:7em;
+        color: #cfd8dc;
+    }
+}

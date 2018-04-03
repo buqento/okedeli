@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Keranjang</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-start (click)="openProduct()">
+          <ion-icon name="ios-add-outline"></ion-icon>
+          Tambah Produk
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <p text-center class="emptyOrder" *ngIf="empty">
+        <ion-icon class="icSad" name="ios-sad-outline"></ion-icon>
+        <br>
+        Ups! Anda belum memilih produk.
+    </p>
+    <div *ngIf="konten">
+        <ion-card>
+            <ion-item-divider color="successlight">
+                DAFTAR PRODUK
+            </ion-item-divider>
+            <ion-list *ngFor="let item of baskets" no-padding>
+                <div (click)="openInfo(item.nama, item.harga_satuan, item.foto, item.nama_penyedia, item.alamat, item.menu_kode_item, item.id_penyedia)">
+                    <ion-item>  
+                        <ion-icon name="ios-restaurant-outline" item-start></ion-icon>
+                        <p><strong>{{item.nama}}</strong></p>
+                        <p>{{item.qty}} item</p>
+                        <p item-end>Rp.{{item.harga_item}}</p>
+                        <button ion-button icon-only item-end clear color="primarydark" (click)="deleteData(item.rowid)">
+                            <ion-icon name="ios-trash-outline"></ion-icon> 
+                        </button>
+                    </ion-item>
+                </div> 
+            </ion-list>
+        </ion-card>
+
+        <ion-card>
+            <ion-item-divider color="light">
+                ALAMAT PENGIRIMAN
+            </ion-item-divider>
+            <ion-item (click)="setAddress()">
+                <ion-icon name="ios-pin-outline" item-start></ion-icon>
+                <p text-wrap>{{vAlamat}}</p>
+                <button ion-button item-end clear color="primarydark" >
+                    Ubah
+                </button>
+            </ion-item>
+        </ion-card>
+
+        <ion-card *ngIf="metode">
+            <ion-item-divider color="light">
+                METODE PEMBAYARAN
+            </ion-item-divider>
+            <ion-item>
+                <ion-label>Bayar di Tempat</ion-label>
+                <ion-toggle [(ngModel)]="metodeBayar" checked="false"></ion-toggle>
+            </ion-item>
+        </ion-card>
+
+        <ion-card>
+            <ion-item-divider color="light">
+                DETAIL PEMBAYARAN
+            </ion-item-divider>
+            <ion-item>
+                <p>Estimasi Harga</p>
+                <p item-end>Rp.{{vTotalBasket}}</p>
+            </ion-item>
+            <ion-item>
+                <p>Biaya Pengiriman</p>
+                <p item-end>Rp.{{vOngKir}}</p>
+            </ion-item>
+            <hr>
+            <ion-item>
+                
+                    <h2 item-start>Total Bayar</h2>
+                    <h2 item-end>Rp.{{vTotBayar}}</h2>
+                
+            </ion-item>
+        </ion-card>
+
+    </div>
+</ion-content>
+
+<ion-footer *ngIf="footer">
+    <ion-grid no-padding fixed>
+        <ion-row>
+            <ion-col col-6>
+                <ion-item>
+                    <small>Saldo</small>
+                    <h1><strong>Rp.{{updateSaldo}}</strong></h1>
+                </ion-item>
+            </ion-col>
+            <ion-col col-6>
+                <button ion-button full large color="success" (click)="confirmPay()">
+                    Bayar
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer> 

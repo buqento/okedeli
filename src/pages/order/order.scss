@@ -1,0 +1,21 @@
+page-order {
+    .count{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: #2e7d32;
+        color: #fff;
+        text-align: center;
+        padding:7px;
+    }
+    .emptyOrder{
+        position: relative;
+        top:40%;
+        font-size:1em;
+        color: #cfd8dc;
+    }
+    .icSad{
+        font-size:7em;
+        color: #cfd8dc;
+    }
+}

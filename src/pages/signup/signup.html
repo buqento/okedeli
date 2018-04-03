@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Pendaftaran</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-item-divider text-center color="secondary"><strong>DATA LOGIN</strong></ion-item-divider>
+      <ion-item>
+        <ion-label floating>Nama Pengguna</ion-label>
+        <ion-input type="text" [(ngModel)]="userData.username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Kata Sandi</ion-label>
+        <ion-input [type]="password_type" [(ngModel)]="userData.password"></ion-input>
+        <button ion-button item-end icon-only clear large (click)="togglePasswordMode()">
+            <ion-icon name="ios-eye-outline"></ion-icon>
+        </button>
+      </ion-item>
+  </ion-list>
+  <ion-list>
+      <ion-item-divider text-center color="secondary"><strong>DATA PROFIL</strong></ion-item-divider>
+      <ion-item>
+        <ion-icon name="heart"></ion-icon>
+        <ion-label floating>Nama Lengkap</ion-label>
+        <ion-input type="text" [(ngModel)]="userData.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="userData.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Telepon</ion-label>
+        <ion-input type="tel" [(ngModel)]="userData.phone"></ion-input>
+      </ion-item>
+  </ion-list>
+
+  <div padding>
+      <button ion-button icon-start round large full color="success" (click)="signup()">
+          <ion-icon name="ios-add-outline"></ion-icon>
+          DAFTAR SEKARANG
+      </button>
+  </div>
+
+</ion-content>
