@@ -5,6 +5,7 @@ import { BantuanPage } from '../bantuan/bantuan';
 import { MapPage } from '../map/map';
 import { LoginPage } from '../login/login';
 import { OrderPage } from '../order/order';
+import { PetaPage } from '../peta/peta';
 
 @IonicPage()
 @Component({
@@ -26,7 +27,7 @@ export class SettingPage {
   constructor(public navCtrl: NavController) {
       this.pushDeposit = DepositPage;
       this.pushBantuan = BantuanPage;
-      this.pushMap = MapPage;
+      this.pushMap = PetaPage;
       this.pushOrder = OrderPage;
       const data = JSON.parse(localStorage.getItem('userData'));
       this.userDetails = data.userData;

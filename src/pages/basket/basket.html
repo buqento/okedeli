@@ -40,7 +40,7 @@
             <ion-item-divider color="light">
                 ALAMAT PENGIRIMAN
             </ion-item-divider>
-            <ion-item (click)="setAddress()">
+            <ion-item [navPush]="pushMap">
                 <ion-icon name="ios-pin-outline" item-start></ion-icon>
                 <p text-wrap>{{vAlamat}}</p>
                 <button ion-button item-end clear color="primarydark" >

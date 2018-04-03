@@ -13,6 +13,7 @@ import { AlamatPage } from '../alamat/alamat';
   templateUrl: 'basket.html',
 })
 export class BasketPage {
+  pushMap:any;
   userDataBasket:any;
   userDetails:any;
   userLocation:any;
@@ -75,6 +76,7 @@ export class BasketPage {
     public modalCtrl: ModalController,
     public navParams: NavParams) {
 
+      this.pushMap = AlamatPage;
       //get data local
       const dataPenyedia = JSON.parse(localStorage.getItem('penyediaInfo'));
       this.penyediaData = dataPenyedia.penyediaInfo;
@@ -334,10 +336,5 @@ export class BasketPage {
     }
     return rev2.split('').reverse().join('');
   }
-
-  setAddress() {
-    this.navCtrl.push(AlamatPage);
-  }
-
   
 }

@@ -29,10 +29,13 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { KoneksiComponent } from '../components/koneksi/koneksi';
 import { SQLite } from '@ionic-native/sqlite';
+import { PetaPage } from '../pages/peta/peta';
+import { AlamatPage } from '../pages/alamat/alamat';
 
 @NgModule({
   declarations: [
     MyApp,
+    AlamatPage,
     AllMerchantPage,
     BantuanPage,
     BasketPage,
@@ -50,6 +53,7 @@ import { SQLite } from '@ionic-native/sqlite';
     SignupPage,
     SuksesPage,
     UlasanPage,
+    PetaPage,
     KoneksiComponent
   ],
   imports: [
@@ -59,6 +63,7 @@ import { SQLite } from '@ionic-native/sqlite';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    AlamatPage,
     AllMerchantPage,
     BantuanPage,
     BasketPage,
@@ -76,6 +81,7 @@ import { SQLite } from '@ionic-native/sqlite';
     SignupPage,
     SuksesPage,
     UlasanPage,
+    PetaPage,
     KoneksiComponent
   ],
   providers: [

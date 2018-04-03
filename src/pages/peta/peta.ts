@@ -3,14 +3,14 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { GoogleMaps, GoogleMap, GoogleMapsEvent, GoogleMapOptions, CameraPosition, MarkerOptions, Marker } from '@ionic-native/google-maps';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AuthService } from '../../providers/auth-service/auth-service';
-import { BasketPage } from '../basket/basket';
+import { HomePage } from '../home/home';
 declare var google:any;
 @IonicPage()
 @Component({
-  selector: 'page-alamat',
-  templateUrl: 'alamat.html',
+  selector: 'page-peta',
+  templateUrl: 'peta.html',
 })
-export class AlamatPage {
+export class PetaPage {
   map: GoogleMap;
   userDetails: any;
   userLocation: any;
@@ -84,7 +84,7 @@ export class AlamatPage {
     this.responseData = result;
     this.dataSet = this.responseData.lokasiData;
     localStorage.setItem('userLocation','{"userLocation":{"lat":"'+lat+'","lng":"'+lng+'","address":"'+address+'"}}');  
-    this.navCtrl.setRoot(BasketPage);
+    this.navCtrl.setRoot(HomePage);
     }, (err) => {
       // Error log
     })
