@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+import { KoneksiComponent } from '../components/koneksi/koneksi';
 import { HomePage } from '../pages/home/home';
 import { AuthService } from '../providers/auth-service/auth-service';
 import { Network } from '@ionic-native/network';
@@ -27,7 +28,6 @@ import { UlasanPage } from '../pages/ulasan/ulasan';
 import { HttpModule } from '@angular/http';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '@ionic-native/google-maps';
-import { KoneksiComponent } from '../components/koneksi/koneksi';
 import { SQLite } from '@ionic-native/sqlite';
 import { PetaPage } from '../pages/peta/peta';
 import { AlamatPage } from '../pages/alamat/alamat';
@@ -35,6 +35,7 @@ import { AlamatPage } from '../pages/alamat/alamat';
 @NgModule({
   declarations: [
     MyApp,
+    KoneksiComponent,
     AlamatPage,
     AllMerchantPage,
     BantuanPage,
@@ -54,7 +55,6 @@ import { AlamatPage } from '../pages/alamat/alamat';
     SuksesPage,
     UlasanPage,
     PetaPage,
-    KoneksiComponent
   ],
   imports: [
     BrowserModule, HttpModule,
@@ -63,6 +63,7 @@ import { AlamatPage } from '../pages/alamat/alamat';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    KoneksiComponent,
     AlamatPage,
     AllMerchantPage,
     BantuanPage,
@@ -82,7 +83,6 @@ import { AlamatPage } from '../pages/alamat/alamat';
     SuksesPage,
     UlasanPage,
     PetaPage,
-    KoneksiComponent
   ],
   providers: [
     StatusBar,

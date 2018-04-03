@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { DepositPage } from '../deposit/deposit';
 import { BantuanPage } from '../bantuan/bantuan';
-import { MapPage } from '../map/map';
 import { LoginPage } from '../login/login';
 import { OrderPage } from '../order/order';
 import { PetaPage } from '../peta/peta';
