@@ -232,11 +232,11 @@ export class BasketPage {
           this.userPostData.qty = res.rows.item(i).qty;
           this.userPostData.harga_item = res.rows.item(i).harga_item;
           this.userPostData.keterangan = res.rows.item(i).keterangan;
-          this.userPostData.lat = res.rows.item(i).lat;
-          this.userPostData.lng = res.rows.item(i).lng;
+          this.userPostData.lat = this.vLat;
+          this.userPostData.lng = this.vLng;
           this.userPostData.kode_belanja = res.rows.item(i).kode_belanja;
           this.userPostData.belanja_id_penyedia = this.idPenyedia;
-          this.userPostData.address = res.rows.item(i).address;
+          this.userPostData.address = this.vAlamat;
           this.userPostData.metode_pembayaran = this.mBayar;
           this.authService.postData(this.userPostData, 'addToBelanja');
         }

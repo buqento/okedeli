@@ -76,9 +76,6 @@ export class PilihItemPage {
       this.namaPenyedia = this.navParams.get('pNamaPenyedia');
       this.foto = this.navParams.get('pFoto');
       this.hitung(); 
-
-
-
   }
 
   getUlasan(kode_item, nama_produk, id_penyedia){
