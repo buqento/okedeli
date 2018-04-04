@@ -29,6 +29,7 @@ export class BasketPage {
   vLat:any;
   vLng:any;
   vAlamat:any;
+  lat:any;
   penyediaLat:any;
   penyediaLng:any;
   google:any;
@@ -187,23 +188,34 @@ export class BasketPage {
   }
 
   pay(){
-    if(this.metodeBayar == true){
-      this.mBayar = 2;
-      this.saveData();
-    }else{
-      if(parseInt(this.userSaldos.saldo) < parseInt(this.totBayar)){
-        this.navCtrl.push(DepositPage);
-      }else{
-        this.mBayar = 0;
-        //update user saldo
-        this.saldoSekarang = parseInt(this.userSaldos.saldo) - parseInt(this.totBayar);
-        localStorage.setItem('userSaldo','{"userSaldo":{"saldo":"'+this.saldoSekarang+'"}}');
-        this.postSaldo.saldo = this.saldoSekarang;
-        this.postSaldo.id_user = this.userDetails.id;
-        this.authService.postData(this.postSaldo,'updateSaldo');
+
+    const dataLocation = JSON.parse(localStorage.getItem('userLocation'));
+    this.userLocation = dataLocation.userLocation;
+    this.lat = this.userLocation.lat;
+    if(this.lat != 0){
+      
+      if(this.metodeBayar == true){
+        this.mBayar = 2;
         this.saveData();
+      }else{
+        if(parseInt(this.userSaldos.saldo) < parseInt(this.totBayar)){
+          this.navCtrl.push(DepositPage);
+        }else{
+          this.mBayar = 0;
+          //update user saldo
+          this.saldoSekarang = parseInt(this.userSaldos.saldo) - parseInt(this.totBayar);
+          localStorage.setItem('userSaldo','{"userSaldo":{"saldo":"'+this.saldoSekarang+'"}}');
+          this.postSaldo.saldo = this.saldoSekarang;
+          this.postSaldo.id_user = this.userDetails.id;
+          this.authService.postData(this.postSaldo,'updateSaldo');
+          this.saveData();
+        }
       }
+
+    }else{
+      this.navCtrl.push(AlamatPage);
     }
+    
   }
 
   saveData(){

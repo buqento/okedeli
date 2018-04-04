@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, ToastController, LoadingController, AlertController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
-import { SettingPage } from '../setting/setting';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -71,7 +71,7 @@ export class DepositPage {
           localStorage.setItem('userSaldo','{"userSaldo":{"saldo":"'+this.updateSaldo+'"}}');
           this.vSaldo = this.convertCurr(this.updateSaldo);
           this.showAlert(this.updateSaldo);
-          this.navCtrl.push(SettingPage, {saldo:this.vSaldo});
+          this.navCtrl.setRoot(HomePage, {saldo:this.vSaldo});
         }else{
           this.presentToast("Kode voucher tidak valid.")
         }

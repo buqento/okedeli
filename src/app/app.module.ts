@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MomentModule } from 'angular2-moment'
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -57,7 +59,7 @@ import { AlamatPage } from '../pages/alamat/alamat';
     PetaPage,
   ],
   imports: [
-    BrowserModule, HttpModule,
+    BrowserModule, HttpModule, MomentModule, BrowserAnimationsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
