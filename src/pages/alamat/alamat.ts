@@ -34,6 +34,8 @@ export class AlamatPage {
     public geolocation: Geolocation,
     public authService: AuthService,
     public navParams: NavParams) {
+      const data = JSON.parse(localStorage.getItem('userData'));
+      this.userDetails = data.userData;
   }
 
   ionViewDidLoad() {
@@ -77,6 +79,7 @@ export class AlamatPage {
   }
 
   updateLokasi(lat, lng, address){
+    this.userPostData.id_user = this.userDetails.id;
     this.userPostData.coordLat = lat;
     this.userPostData.coordLng = lng;
     this.userPostData.address = address;
